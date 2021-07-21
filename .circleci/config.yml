@@ -7,13 +7,13 @@ job:
           username: undefinedref
           passowrd: $DOCKERHUB_PASSWORD
       steps:
-        - checkout
-        - run:
-          name: Install Pyton deps in a venv
+       - checkout
+       - run:
+          name: Install Python deps in a venv
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            pip install -r requirments/dev.txt
+            pip install -r requirements/dev.txt
         -run:
           name: run program
           command: cd flask_dmeo && flask run flask_demo/main
