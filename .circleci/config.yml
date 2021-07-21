@@ -15,7 +15,8 @@ jobs:
             . venv/bin/activate
             pwd
             ls
-            pip install -r requirements/dev.txt
-            cd flask_demo
+            cd requirments
+            pip install -r dev.txt
+            cd ~/flask_demo
             flask run
 
