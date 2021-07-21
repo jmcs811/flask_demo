@@ -1,0 +1,17 @@
+version: 2
+job:
+  build:
+    docker:
+      - image: circle/python:3.6.2-strech-browsers
+        auth:
+          username: undefinedref
+          passowrd: $DOCKERHUB_PASSWORD
+      steps:
+        - checkout
+        - run:
+          name: Install Pyton deps in a venv
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirments/dev.txt
+      
