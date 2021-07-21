@@ -13,6 +13,7 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
+            export FLASK_APP=main
             pip install Flask
             cd flask_demo
             flask run
