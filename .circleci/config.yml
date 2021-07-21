@@ -13,6 +13,7 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
+            pwd
             pip install -r requirements/dev.txt
             cd flask_demo
             flask run
