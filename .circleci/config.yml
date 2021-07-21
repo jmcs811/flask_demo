@@ -2,10 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-      -image: circle/python:3.6.2-strech-browsers
-      auth:
-        username: undefinedref
-        passowrd: $DOCKERHUB_PASSWORD
+      - image: circleci/python:3.6.2-stretch-browsers
+        auth:
+          username: undefined
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
       - run:
@@ -14,7 +14,6 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements/dev.txt
-        -run:
-          name: run program
-          command: cd flask_dmeo && flask run flask_demo/main
+            cd flask_demo
+            flask run
 
